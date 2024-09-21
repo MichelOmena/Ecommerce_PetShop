@@ -1,0 +1,18 @@
+{
+    "name": "michelomena/ecommercepetshop",
+    "description": "online e-commerce b2c project",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Michelomena\\Ecommercepetshop\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Michel Omena",
+            "email": "micheltenoriodeomena@hotmail.com"
+        }
+    ],
+    "require": {}
+    "autoload": 7
+}

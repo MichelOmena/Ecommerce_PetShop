@@ -2,26 +2,41 @@
 
 namespace core\class;
 
+use PDO;
+use PDOException;
+
 class Database{
 
     private $connection;
 
-    private function on
+    //=============================================================================
+    //1 - Ligar a base de dados
+    private function TurnOn(){
 
-    
+        $this->connection = new PDO(
+            'mysql:'.
+            'host='.MYSQL_SERVER.';'.
+            'dbname='.MYSQL_DATABASE.';'.
+            'charset='.MYSQL_CHARSET,
+            MYSQL_USER,
+            MYSQL_PASS,
+            array(PDO::ATTR_PERSISTENT => true)
+        );
+    }
+
+
+    //=============================================================================
+    private function TurnOff(){
+        //desliga-se da base de dados
+        $this->connection = null;
+    }
+
+    //=============================================================================
+    //CRUD
+    //=============================================================================
+    public function select($sql, $parametros = null){
+
+        // executa funcao de pesquisa de SQL
+        
+    }
 }
-
- /*
-    CRUD
-    Create   - INSERT
-    READ     - SELECT
-    Update   - UPDATE
-    Delete   -DELETE
-
-/*
-define('MYSQL_SERVER',    'localhost');
-define('MYSQL_DATABASE',  'php_store');
-define('MYSQL_USER',      'user_php_store');
-define('MYSQL_PASS',      '');
-define('MYSQL_CHARSET',   'utf8');
-*/

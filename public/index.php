@@ -1,16 +1,22 @@
 <?php
-// abrir a sessao
+
 
 use core\class\Database;
+use core\class\functions;
 
+// abrir a sessao
 session_start();
 
 //Carregar o config 
 require_once('../config.php');
 
+//Carrega todas as classes do projeto
 require_once('../vendor/autoload.php');
 
 $a = new Database();
+$b = new functions();
+
+$b->test();
 
 echo 'OK';
 
